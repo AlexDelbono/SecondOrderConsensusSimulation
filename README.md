@@ -1,5 +1,5 @@
 # Second order consensus simulation
-The repository implements the consensus algorithm presented [here]() using a modified version of [this]() robot simulation.
+The repository implements the consensus algorithm presented [here](https://github.com/AlexDelbono/ComTector-algorithm.git) using a modified version of [this](https://github.com/AlexDelbono/RoboticsCourse.git) robot simulation.
 
 The project was developed for the course "Complessità nei Sistemi e nelle Reti" held at Politecnico di Milano in 2015/2016.
 
