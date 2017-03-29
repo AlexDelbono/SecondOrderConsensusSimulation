@@ -1,0 +1,30 @@
+<launch>
+
+  <rosparam param="/integration_method">1</rosparam>
+  <rosparam param="/net_structure">3</rosparam>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <node name="model_spawner1" pkg="gazebo_ros" type="spawn_model"
+    args="-file $(find delbono_kobra)/models/DelbonoKobraCompl/model.sdf -sdf -z 1 -x 4 -y 4 -model DelbonoKobraCompl1" />
+
+  <node name="model_spawner2" pkg="gazebo_ros" type="spawn_model"
+    args="-file $(find delbono_kobra)/models/DelbonoKobraCompl/model.sdf -sdf -z 1 -x 4 -y -4 -model DelbonoKobraCompl2" />
+
+  <node name="model_spawner3" pkg="gazebo_ros" type="spawn_model"
+    args="-file $(find delbono_kobra)/models/DelbonoKobraCompl/model.sdf -sdf -z 1 -x -4 -y -4 -model DelbonoKobraCompl3" />
+
+  <node name="model_spawner4" pkg="gazebo_ros" type="spawn_model"
+    args="-file $(find delbono_kobra)/models/DelbonoKobraCompl/model.sdf -sdf -z 1 -x -4 -y 4 -model DelbonoKobraCompl4" />
+
+  <node pkg="delbono_kobra" type="delbono_kobra_formation_controller"
+        name="delbono_kobra_formation_controller" />
+
+
+</launch>

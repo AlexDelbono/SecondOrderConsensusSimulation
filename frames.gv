@@ -1,0 +1,17 @@
+digraph G {
+"simulator_odometry" -> "simulator_laser"[label="Broadcaster: /delbono_kobra_tf_broadcaster\nAverage rate: 1292.516 Hz\nMost recent transform: 200.525 ( -0.099 sec old)\nBuffer length: 4.516 sec\n"];
+"odom" -> "simulator_odometry"[label="Broadcaster: /delbono_kobra_tf_broadcaster\nAverage rate: 654.291 Hz\nMost recent transform: 200.509 ( -0.083 sec old)\nBuffer length: 4.498 sec\n"];
+"delbono_odometry" -> "laser"[label="Broadcaster: /delbono_kobra_tf_broadcaster\nAverage rate: 1292.516 Hz\nMost recent transform: 200.525 ( -0.099 sec old)\nBuffer length: 4.516 sec\n"];
+"odom" -> "delbono_odometry"[label="Broadcaster: /delbono_kobra_tf_broadcaster\nAverage rate: 640.833 Hz\nMost recent transform: 200.525 ( -0.099 sec old)\nBuffer length: 4.516 sec\n"];
+"map" -> "odom"[label="Broadcaster: /gmapping_thing\nAverage rate: 20.225 Hz\nMost recent transform: 200.450 ( -0.024 sec old)\nBuffer length: 4.450 sec\n"];
+"tilt_joint" -> "camera"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 638.089 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+"pan_joint" -> "tilt_joint"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 638.089 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+"simulator_tilt_joint" -> "simulator_camera"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 637.866 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+"simulator_pan_joint" -> "simulator_tilt_joint"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 638.089 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+"delbono_odometry" -> "pan_joint"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 638.089 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+"simulator_odometry" -> "simulator_pan_joint"[label="Broadcaster: /delbono_kobra_tf_broadcaster_camera\nAverage rate: 638.089 Hz\nMost recent transform: 200.417 ( 0.009 sec old)\nBuffer length: 4.479 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 200.426"[ shape=plaintext ] ;
+ }->"map";
+}
